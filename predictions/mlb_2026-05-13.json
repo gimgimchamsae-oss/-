@@ -1,0 +1,279 @@
+{
+  "date": "2026-05-13",
+  "league": "MLB",
+  "generated_at": "2026-05-13T22:21:05.074921",
+  "standings_asof": "2026-05-12 (partial WebSearch)",
+  "games": [
+    {
+      "matchup": "NYY @ BAL",
+      "venue": "Camden Yards",
+      "pitchers": "Max Fried vs BAL_TBD",
+      "home_wr": 46.6,
+      "score_h": 4.69,
+      "score_a": 5.42,
+      "total": 10.11,
+      "pick": "NYY 승",
+      "strength": "⚪ 관망",
+      "edge": 6.8,
+      "ou": "🔼 오버 (10.11)",
+      "notes": [
+        "Max Fried(NYY): LHP, 4-2, 안정적",
+        "BAL_TBD(BAL): BAL 선발 미확정",
+        "구장: Camden Yards (PF 1.08)"
+      ]
+    },
+    {
+      "matchup": "LAA @ CLE",
+      "venue": "Progressive Field",
+      "pitchers": "Reid Detmers vs CLE_TBD",
+      "home_wr": 53.1,
+      "score_h": 4.96,
+      "score_a": 4.74,
+      "total": 9.7,
+      "pick": "CLE 승",
+      "strength": "⚪ 관망",
+      "edge": 6.2,
+      "ou": "⚪ 관망 (9.7)",
+      "notes": [
+        "Reid Detmers(LAA): LHP, 1-3",
+        "CLE_TBD(CLE): CLE 평균 (강한 로테이션)",
+        "구장: Progressive Field (PF 0.98)"
+      ]
+    },
+    {
+      "matchup": "WSH @ CIN",
+      "venue": "GABP",
+      "pitchers": "Jake Irvin vs Nick Lodolo",
+      "home_wr": 49.9,
+      "score_h": 6.15,
+      "score_a": 6.51,
+      "total": 12.66,
+      "pick": "WSH 승",
+      "strength": "⚪ 관망",
+      "edge": 0.1,
+      "ou": "🔼 오버 (12.66)",
+      "notes": [
+        "Jake Irvin(WSH): RHP, 1-4, 부진",
+        "Nick Lodolo(CIN): LHP, 0-1, 극도 부진",
+        "구장: GABP (PF 1.1)"
+      ]
+    },
+    {
+      "matchup": "COL @ PIT",
+      "venue": "PNC Park",
+      "pitchers": "COL_TBD vs PIT_TBD",
+      "home_wr": 55.5,
+      "score_h": 5.47,
+      "score_a": 4.75,
+      "total": 10.22,
+      "pick": "PIT 승",
+      "strength": "🟡 약한 픽",
+      "edge": 11.0,
+      "ou": "🔼 오버 (10.22)",
+      "notes": [
+        "COL_TBD(COL): COL 선발 (구장 보정 전 ERA 높음)",
+        "PIT_TBD(PIT): PIT 선발 미확정",
+        "구장: PNC Park (PF 0.96)"
+      ]
+    },
+    {
+      "matchup": "PHI @ BOS",
+      "venue": "Fenway Park",
+      "pitchers": "Andrew Painter vs Sonny Gray",
+      "home_wr": 49.7,
+      "score_h": 4.72,
+      "score_a": 5.05,
+      "total": 9.77,
+      "pick": "PHI 승",
+      "strength": "⚪ 관망",
+      "edge": 0.6,
+      "ou": "⚪ 관망 (9.77)",
+      "notes": [
+        "Andrew Painter(PHI): RHP, 필리스 슈퍼루키",
+        "Sonny Gray(BOS): RHP, 베테랑 평균",
+        "구장: Fenway Park (PF 1.06)"
+      ]
+    },
+    {
+      "matchup": "TB @ TOR",
+      "venue": "Rogers Centre",
+      "pitchers": "Shane McClanahan vs Dylan Cease",
+      "home_wr": 48.5,
+      "score_h": 3.99,
+      "score_a": 4.58,
+      "total": 8.57,
+      "pick": "TB 승",
+      "strength": "⚪ 관망",
+      "edge": 2.9,
+      "ou": "⚪ 관망 (8.57)",
+      "notes": [
+        "Shane McClanahan(TB): LHP, 4-2, 에이스급",
+        "Dylan Cease(TOR): RHP, 상위 K 머신, TOR 이적",
+        "구장: Rogers Centre (PF 1.02)"
+      ]
+    },
+    {
+      "matchup": "DET @ NYM",
+      "venue": "Citi Field",
+      "pitchers": "Jack Flaherty vs Freddy Peralta",
+      "home_wr": 57.4,
+      "score_h": 5.56,
+      "score_a": 4.15,
+      "total": 9.71,
+      "pick": "NYM 승",
+      "strength": "🟡 약한 픽",
+      "edge": 14.7,
+      "ou": "⚪ 관망 (9.71)",
+      "notes": [
+        "Jack Flaherty(DET): RHP, 0-3, 부진",
+        "Freddy Peralta(NYM): RHP, 2-3, 좋음",
+        "구장: Citi Field (PF 0.94)"
+      ]
+    },
+    {
+      "matchup": "CHC @ ATL",
+      "venue": "Truist Park",
+      "pitchers": "Shota Imanaga vs ATL_TBD",
+      "home_wr": 46.9,
+      "score_h": 4.04,
+      "score_a": 4.97,
+      "total": 9.01,
+      "pick": "CHC 승",
+      "strength": "⚪ 관망",
+      "edge": 6.2,
+      "ou": "⚪ 관망 (9.01)",
+      "notes": [
+        "Shota Imanaga(CHC): LHP, WHIP 0.93, OPP .179",
+        "ATL_TBD(ATL): ATL 선발 미확정, 로테이션 평균",
+        "구장: Truist Park (PF 1.02)"
+      ]
+    },
+    {
+      "matchup": "KC @ CWS",
+      "venue": "Rate Field",
+      "pitchers": "Seth Lugo vs Noah Schultz",
+      "home_wr": 47.4,
+      "score_h": 5.04,
+      "score_a": 5.6,
+      "total": 10.64,
+      "pick": "KC 승",
+      "strength": "⚪ 관망",
+      "edge": 5.3,
+      "ou": "🔼 오버 (10.64)",
+      "notes": [
+        "Seth Lugo(KC): RHP, 안정적",
+        "Noah Schultz(CWS): LHP, 루키, 변동성 큼",
+        "구장: Rate Field (PF 1.05)"
+      ]
+    },
+    {
+      "matchup": "MIA @ MIN",
+      "venue": "Target Field",
+      "pitchers": "Max Meyer vs Simeon Woods Richardson",
+      "home_wr": 50.7,
+      "score_h": 4.87,
+      "score_a": 5.02,
+      "total": 9.89,
+      "pick": "MIN 승",
+      "strength": "⚪ 관망",
+      "edge": 1.3,
+      "ou": "⚪ 관망 (9.89)",
+      "notes": [
+        "Max Meyer(MIA): RHP, 평균",
+        "Simeon Woods Richardson(MIN): RHP, 평균",
+        "구장: Target Field (PF 1.0)"
+      ]
+    },
+    {
+      "matchup": "SD @ MIL",
+      "venue": "American Family",
+      "pitchers": "SD_TBD vs Jacob Misiorowski",
+      "home_wr": 55.4,
+      "score_h": 5.05,
+      "score_a": 4.08,
+      "total": 9.13,
+      "pick": "MIL 승",
+      "strength": "🟡 약한 픽",
+      "edge": 10.7,
+      "ou": "⚪ 관망 (9.13)",
+      "notes": [
+        "SD_TBD(SD): SD 선발 미확정 (강 로테이션)",
+        "Jacob Misiorowski(MIL): RHP, K/9 14.3, 39.5 K%",
+        "구장: American Family (PF 1.06)"
+      ]
+    },
+    {
+      "matchup": "ARI @ TEX",
+      "venue": "Globe Life Field",
+      "pitchers": "Ryne Nelson vs Kumar Rocker",
+      "home_wr": 52.1,
+      "score_h": 5.33,
+      "score_a": 5.11,
+      "total": 10.44,
+      "pick": "TEX 승",
+      "strength": "⚪ 관망",
+      "edge": 4.3,
+      "ou": "🔼 오버 (10.44)",
+      "notes": [
+        "Ryne Nelson(ARI): RHP, 평균",
+        "Kumar Rocker(TEX): RHP, 회복세",
+        "구장: Globe Life Field (PF 1.04)"
+      ]
+    },
+    {
+      "matchup": "SEA @ HOU",
+      "venue": "Daikin Park",
+      "pitchers": "SEA_TBD vs Lance McCullers",
+      "home_wr": 50.0,
+      "score_h": 4.63,
+      "score_a": 4.68,
+      "total": 9.31,
+      "pick": "HOU 승",
+      "strength": "⚪ 관망",
+      "edge": 0.1,
+      "ou": "⚪ 관망 (9.31)",
+      "notes": [
+        "SEA_TBD(SEA): SEA 선발 미확정 (강 로테이션)",
+        "Lance McCullers(HOU): RHP, 복귀 후 호조",
+        "구장: Daikin Park (PF 0.98)"
+      ]
+    },
+    {
+      "matchup": "STL @ OAK",
+      "venue": "Sutter Health Park",
+      "pitchers": "Matthew Liberatore vs OAK_TBD",
+      "home_wr": 48.7,
+      "score_h": 4.82,
+      "score_a": 5.26,
+      "total": 10.08,
+      "pick": "STL 승",
+      "strength": "⚪ 관망",
+      "edge": 2.6,
+      "ou": "🔼 오버 (10.08)",
+      "notes": [
+        "Matthew Liberatore(STL): LHP, STL 좌완",
+        "OAK_TBD(OAK): OAK 선발 미확정",
+        "구장: Sutter Health Park (PF 1.04)"
+      ]
+    },
+    {
+      "matchup": "SF @ LAD",
+      "venue": "Dodger Stadium",
+      "pitchers": "SF_TBD vs Shohei Ohtani",
+      "home_wr": 58.3,
+      "score_h": 4.73,
+      "score_a": 3.33,
+      "total": 8.06,
+      "pick": "LAD 승",
+      "strength": "🟢 픽",
+      "edge": 16.6,
+      "ou": "⚪ 관망 (8.06)",
+      "notes": [
+        "SF_TBD(SF): SF 선발 미확정",
+        "Shohei Ohtani(LAD): RHP/DH, 6경기 0.97 ERA, 42K",
+        "구장: Dodger Stadium (PF 0.97)"
+      ]
+    }
+  ],
+  "source": "WebSearch (statsapi.mlb.com 직접 호출 불가, 공개 데이터 기반)"
+}
