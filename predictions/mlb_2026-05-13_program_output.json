@@ -1,0 +1,576 @@
+{
+  "date": "2026-05-13",
+  "mode": "patched_requests (run_all.py mlb 흐름 그대로)",
+  "picks": [
+    {
+      "game": "NYY @ BAL",
+      "pitchers": "Max Fried vs TBD",
+      "pred": {
+        "home_win_prob": 0.491,
+        "away_win_prob": 0.509,
+        "predicted_home_runs": 4.23,
+        "predicted_away_runs": 4.31,
+        "predicted_total": 8.54,
+        "confidence": 0.425,
+        "details": {
+          "home_pitcher_score": 50,
+          "away_pitcher_score": 62.8,
+          "home_lineup_score": 48.5,
+          "away_lineup_score": 48.5,
+          "home_bullpen_score": 72.0,
+          "away_bullpen_score": 72.0,
+          "home_defense_score": 50,
+          "away_defense_score": 50,
+          "home_fatigue_score": 80,
+          "away_fatigue_score": 80,
+          "park_factor": 101,
+          "weather_modifier": 1.0,
+          "weather_effects": [],
+          "umpire": null,
+          "umpire_modifier": 1.0,
+          "home_context_modifier": 1.0,
+          "away_context_modifier": 1.0,
+          "context_flags": [],
+          "lineup_flags_home": [],
+          "lineup_flags_away": [],
+          "bullpen_red_flags": {
+            "home": [],
+            "away": []
+          }
+        }
+      }
+    },
+    {
+      "game": "LAA @ CLE",
+      "pitchers": "Reid Detmers vs TBD",
+      "pred": {
+        "home_win_prob": 0.492,
+        "away_win_prob": 0.508,
+        "predicted_home_runs": 4.07,
+        "predicted_away_runs": 4.14,
+        "predicted_total": 8.21,
+        "confidence": 0.425,
+        "details": {
+          "home_pitcher_score": 50,
+          "away_pitcher_score": 62.8,
+          "home_lineup_score": 48.5,
+          "away_lineup_score": 48.5,
+          "home_bullpen_score": 72.0,
+          "away_bullpen_score": 72.0,
+          "home_defense_score": 50,
+          "away_defense_score": 50,
+          "home_fatigue_score": 80,
+          "away_fatigue_score": 80,
+          "park_factor": 97,
+          "weather_modifier": 1.0,
+          "weather_effects": [],
+          "umpire": null,
+          "umpire_modifier": 1.0,
+          "home_context_modifier": 1.0,
+          "away_context_modifier": 1.0,
+          "context_flags": [],
+          "lineup_flags_home": [],
+          "lineup_flags_away": [],
+          "bullpen_red_flags": {
+            "home": [],
+            "away": []
+          }
+        }
+      }
+    },
+    {
+      "game": "WSH @ CIN",
+      "pitchers": "Jake Irvin vs Nick Lodolo",
+      "pred": {
+        "home_win_prob": 0.521,
+        "away_win_prob": 0.479,
+        "predicted_home_runs": 4.51,
+        "predicted_away_runs": 4.31,
+        "predicted_total": 8.82,
+        "confidence": 0.5,
+        "details": {
+          "home_pitcher_score": 62.8,
+          "away_pitcher_score": 62.8,
+          "home_lineup_score": 48.5,
+          "away_lineup_score": 48.5,
+          "home_bullpen_score": 72.0,
+          "away_bullpen_score": 72.0,
+          "home_defense_score": 50,
+          "away_defense_score": 50,
+          "home_fatigue_score": 80,
+          "away_fatigue_score": 80,
+          "park_factor": 108,
+          "weather_modifier": 1.0,
+          "weather_effects": [],
+          "umpire": null,
+          "umpire_modifier": 1.0,
+          "home_context_modifier": 1.0,
+          "away_context_modifier": 1.0,
+          "context_flags": [],
+          "lineup_flags_home": [],
+          "lineup_flags_away": [],
+          "bullpen_red_flags": {
+            "home": [],
+            "away": []
+          }
+        }
+      }
+    },
+    {
+      "game": "COL @ PIT",
+      "pitchers": "TBD vs TBD",
+      "pred": {
+        "home_win_prob": 0.522,
+        "away_win_prob": 0.478,
+        "predicted_home_runs": 4.22,
+        "predicted_away_runs": 4.02,
+        "predicted_total": 8.24,
+        "confidence": 0.425,
+        "details": {
+          "home_pitcher_score": 50,
+          "away_pitcher_score": 50,
+          "home_lineup_score": 48.5,
+          "away_lineup_score": 48.5,
+          "home_bullpen_score": 72.0,
+          "away_bullpen_score": 72.0,
+          "home_defense_score": 50,
+          "away_defense_score": 50,
+          "home_fatigue_score": 80,
+          "away_fatigue_score": 80,
+          "park_factor": 94,
+          "weather_modifier": 1.0,
+          "weather_effects": [],
+          "umpire": null,
+          "umpire_modifier": 1.0,
+          "home_context_modifier": 1.0,
+          "away_context_modifier": 1.0,
+          "context_flags": [],
+          "lineup_flags_home": [],
+          "lineup_flags_away": [],
+          "bullpen_red_flags": {
+            "home": [],
+            "away": []
+          }
+        }
+      }
+    },
+    {
+      "game": "PHI @ BOS",
+      "pitchers": "Andrew Painter vs Sonny Gray",
+      "pred": {
+        "home_win_prob": 0.522,
+        "away_win_prob": 0.478,
+        "predicted_home_runs": 4.35,
+        "predicted_away_runs": 4.15,
+        "predicted_total": 8.5,
+        "confidence": 0.5,
+        "details": {
+          "home_pitcher_score": 62.8,
+          "away_pitcher_score": 62.8,
+          "home_lineup_score": 48.5,
+          "away_lineup_score": 48.5,
+          "home_bullpen_score": 72.0,
+          "away_bullpen_score": 72.0,
+          "home_defense_score": 50,
+          "away_defense_score": 50,
+          "home_fatigue_score": 80,
+          "away_fatigue_score": 80,
+          "park_factor": 104,
+          "weather_modifier": 1.0,
+          "weather_effects": [],
+          "umpire": null,
+          "umpire_modifier": 1.0,
+          "home_context_modifier": 1.0,
+          "away_context_modifier": 1.0,
+          "context_flags": [],
+          "lineup_flags_home": [],
+          "lineup_flags_away": [],
+          "bullpen_red_flags": {
+            "home": [],
+            "away": []
+          }
+        }
+      }
+    },
+    {
+      "game": "TB @ TOR",
+      "pitchers": "Shane McClanahan vs Dylan Cease",
+      "pred": {
+        "home_win_prob": 0.522,
+        "away_win_prob": 0.478,
+        "predicted_home_runs": 4.19,
+        "predicted_away_runs": 3.99,
+        "predicted_total": 8.18,
+        "confidence": 0.5,
+        "details": {
+          "home_pitcher_score": 62.8,
+          "away_pitcher_score": 62.8,
+          "home_lineup_score": 48.5,
+          "away_lineup_score": 48.5,
+          "home_bullpen_score": 72.0,
+          "away_bullpen_score": 72.0,
+          "home_defense_score": 50,
+          "away_defense_score": 50,
+          "home_fatigue_score": 80,
+          "away_fatigue_score": 80,
+          "park_factor": 100,
+          "weather_modifier": 1.0,
+          "weather_effects": [],
+          "umpire": null,
+          "umpire_modifier": 1.0,
+          "home_context_modifier": 1.0,
+          "away_context_modifier": 1.0,
+          "context_flags": [],
+          "lineup_flags_home": [],
+          "lineup_flags_away": [],
+          "bullpen_red_flags": {
+            "home": [],
+            "away": []
+          }
+        }
+      }
+    },
+    {
+      "game": "DET @ NYM",
+      "pitchers": "Jack Flaherty vs Freddy Peralta",
+      "pred": {
+        "home_win_prob": 0.523,
+        "away_win_prob": 0.477,
+        "predicted_home_runs": 4.03,
+        "predicted_away_runs": 3.83,
+        "predicted_total": 7.86,
+        "confidence": 0.5,
+        "details": {
+          "home_pitcher_score": 62.8,
+          "away_pitcher_score": 62.8,
+          "home_lineup_score": 48.5,
+          "away_lineup_score": 48.5,
+          "home_bullpen_score": 72.0,
+          "away_bullpen_score": 72.0,
+          "home_defense_score": 50,
+          "away_defense_score": 50,
+          "home_fatigue_score": 80,
+          "away_fatigue_score": 80,
+          "park_factor": 96,
+          "weather_modifier": 1.0,
+          "weather_effects": [],
+          "umpire": null,
+          "umpire_modifier": 1.0,
+          "home_context_modifier": 1.0,
+          "away_context_modifier": 1.0,
+          "context_flags": [],
+          "lineup_flags_home": [],
+          "lineup_flags_away": [],
+          "bullpen_red_flags": {
+            "home": [],
+            "away": []
+          }
+        }
+      }
+    },
+    {
+      "game": "CHC @ ATL",
+      "pitchers": "Shota Imanaga vs TBD",
+      "pred": {
+        "home_win_prob": 0.491,
+        "away_win_prob": 0.509,
+        "predicted_home_runs": 4.19,
+        "predicted_away_runs": 4.27,
+        "predicted_total": 8.46,
+        "confidence": 0.425,
+        "details": {
+          "home_pitcher_score": 50,
+          "away_pitcher_score": 62.8,
+          "home_lineup_score": 48.5,
+          "away_lineup_score": 48.5,
+          "home_bullpen_score": 72.0,
+          "away_bullpen_score": 72.0,
+          "home_defense_score": 50,
+          "away_defense_score": 50,
+          "home_fatigue_score": 80,
+          "away_fatigue_score": 80,
+          "park_factor": 100,
+          "weather_modifier": 1.0,
+          "weather_effects": [],
+          "umpire": null,
+          "umpire_modifier": 1.0,
+          "home_context_modifier": 1.0,
+          "away_context_modifier": 1.0,
+          "context_flags": [],
+          "lineup_flags_home": [],
+          "lineup_flags_away": [],
+          "bullpen_red_flags": {
+            "home": [],
+            "away": []
+          }
+        }
+      }
+    },
+    {
+      "game": "KCR @ CHW",
+      "pitchers": "Seth Lugo vs Noah Schultz",
+      "pred": {
+        "home_win_prob": 0.522,
+        "away_win_prob": 0.478,
+        "predicted_home_runs": 4.19,
+        "predicted_away_runs": 3.99,
+        "predicted_total": 8.18,
+        "confidence": 0.5,
+        "details": {
+          "home_pitcher_score": 62.8,
+          "away_pitcher_score": 62.8,
+          "home_lineup_score": 48.5,
+          "away_lineup_score": 48.5,
+          "home_bullpen_score": 72.0,
+          "away_bullpen_score": 72.0,
+          "home_defense_score": 50,
+          "away_defense_score": 50,
+          "home_fatigue_score": 80,
+          "away_fatigue_score": 80,
+          "park_factor": 100,
+          "weather_modifier": 1.0,
+          "weather_effects": [],
+          "umpire": null,
+          "umpire_modifier": 1.0,
+          "home_context_modifier": 1.0,
+          "away_context_modifier": 1.0,
+          "context_flags": [],
+          "lineup_flags_home": [],
+          "lineup_flags_away": [],
+          "bullpen_red_flags": {
+            "home": [],
+            "away": []
+          }
+        }
+      }
+    },
+    {
+      "game": "MIA @ MIN",
+      "pitchers": "Max Meyer vs Simeon Woods Richardson",
+      "pred": {
+        "home_win_prob": 0.523,
+        "away_win_prob": 0.477,
+        "predicted_home_runs": 4.15,
+        "predicted_away_runs": 3.95,
+        "predicted_total": 8.1,
+        "confidence": 0.5,
+        "details": {
+          "home_pitcher_score": 62.8,
+          "away_pitcher_score": 62.8,
+          "home_lineup_score": 48.5,
+          "away_lineup_score": 48.5,
+          "home_bullpen_score": 72.0,
+          "away_bullpen_score": 72.0,
+          "home_defense_score": 50,
+          "away_defense_score": 50,
+          "home_fatigue_score": 80,
+          "away_fatigue_score": 80,
+          "park_factor": 99,
+          "weather_modifier": 1.0,
+          "weather_effects": [],
+          "umpire": null,
+          "umpire_modifier": 1.0,
+          "home_context_modifier": 1.0,
+          "away_context_modifier": 1.0,
+          "context_flags": [],
+          "lineup_flags_home": [],
+          "lineup_flags_away": [],
+          "bullpen_red_flags": {
+            "home": [],
+            "away": []
+          }
+        }
+      }
+    },
+    {
+      "game": "SDP @ MIL",
+      "pitchers": "TBD vs Jacob Misiorowski",
+      "pred": {
+        "home_win_prob": 0.552,
+        "away_win_prob": 0.448,
+        "predicted_home_runs": 4.47,
+        "predicted_away_runs": 3.99,
+        "predicted_total": 8.46,
+        "confidence": 0.425,
+        "details": {
+          "home_pitcher_score": 62.8,
+          "away_pitcher_score": 50,
+          "home_lineup_score": 48.5,
+          "away_lineup_score": 48.5,
+          "home_bullpen_score": 72.0,
+          "away_bullpen_score": 72.0,
+          "home_defense_score": 50,
+          "away_defense_score": 50,
+          "home_fatigue_score": 80,
+          "away_fatigue_score": 80,
+          "park_factor": 100,
+          "weather_modifier": 1.0,
+          "weather_effects": [],
+          "umpire": null,
+          "umpire_modifier": 1.0,
+          "home_context_modifier": 1.0,
+          "away_context_modifier": 1.0,
+          "context_flags": [],
+          "lineup_flags_home": [],
+          "lineup_flags_away": [],
+          "bullpen_red_flags": {
+            "home": [],
+            "away": []
+          }
+        }
+      }
+    },
+    {
+      "game": "ARI @ TEX",
+      "pitchers": "Ryne Nelson vs Kumar Rocker",
+      "pred": {
+        "home_win_prob": 0.521,
+        "away_win_prob": 0.479,
+        "predicted_home_runs": 4.39,
+        "predicted_away_runs": 4.19,
+        "predicted_total": 8.58,
+        "confidence": 0.5,
+        "details": {
+          "home_pitcher_score": 62.8,
+          "away_pitcher_score": 62.8,
+          "home_lineup_score": 48.5,
+          "away_lineup_score": 48.5,
+          "home_bullpen_score": 72.0,
+          "away_bullpen_score": 72.0,
+          "home_defense_score": 50,
+          "away_defense_score": 50,
+          "home_fatigue_score": 80,
+          "away_fatigue_score": 80,
+          "park_factor": 105,
+          "weather_modifier": 1.0,
+          "weather_effects": [],
+          "umpire": null,
+          "umpire_modifier": 1.0,
+          "home_context_modifier": 1.0,
+          "away_context_modifier": 1.0,
+          "context_flags": [],
+          "lineup_flags_home": [],
+          "lineup_flags_away": [],
+          "bullpen_red_flags": {
+            "home": [],
+            "away": []
+          }
+        }
+      }
+    },
+    {
+      "game": "SEA @ HOU",
+      "pitchers": "TBD vs Lance McCullers",
+      "pred": {
+        "home_win_prob": 0.552,
+        "away_win_prob": 0.448,
+        "predicted_home_runs": 4.47,
+        "predicted_away_runs": 3.99,
+        "predicted_total": 8.46,
+        "confidence": 0.425,
+        "details": {
+          "home_pitcher_score": 62.8,
+          "away_pitcher_score": 50,
+          "home_lineup_score": 48.5,
+          "away_lineup_score": 48.5,
+          "home_bullpen_score": 72.0,
+          "away_bullpen_score": 72.0,
+          "home_defense_score": 50,
+          "away_defense_score": 50,
+          "home_fatigue_score": 80,
+          "away_fatigue_score": 80,
+          "park_factor": 100,
+          "weather_modifier": 1.0,
+          "weather_effects": [],
+          "umpire": null,
+          "umpire_modifier": 1.0,
+          "home_context_modifier": 1.0,
+          "away_context_modifier": 1.0,
+          "context_flags": [],
+          "lineup_flags_home": [],
+          "lineup_flags_away": [],
+          "bullpen_red_flags": {
+            "home": [],
+            "away": []
+          }
+        }
+      }
+    },
+    {
+      "game": "STL @ OAK",
+      "pitchers": "Matthew Liberatore vs TBD",
+      "pred": {
+        "home_win_prob": 0.491,
+        "away_win_prob": 0.509,
+        "predicted_home_runs": 4.19,
+        "predicted_away_runs": 4.27,
+        "predicted_total": 8.46,
+        "confidence": 0.425,
+        "details": {
+          "home_pitcher_score": 50,
+          "away_pitcher_score": 62.8,
+          "home_lineup_score": 48.5,
+          "away_lineup_score": 48.5,
+          "home_bullpen_score": 72.0,
+          "away_bullpen_score": 72.0,
+          "home_defense_score": 50,
+          "away_defense_score": 50,
+          "home_fatigue_score": 80,
+          "away_fatigue_score": 80,
+          "park_factor": 100,
+          "weather_modifier": 1.0,
+          "weather_effects": [],
+          "umpire": null,
+          "umpire_modifier": 1.0,
+          "home_context_modifier": 1.0,
+          "away_context_modifier": 1.0,
+          "context_flags": [],
+          "lineup_flags_home": [],
+          "lineup_flags_away": [],
+          "bullpen_red_flags": {
+            "home": [],
+            "away": []
+          }
+        }
+      }
+    },
+    {
+      "game": "SFG @ LAD",
+      "pitchers": "TBD vs Shohei Ohtani",
+      "pred": {
+        "home_win_prob": 0.552,
+        "away_win_prob": 0.448,
+        "predicted_home_runs": 4.34,
+        "predicted_away_runs": 3.87,
+        "predicted_total": 8.21,
+        "confidence": 0.425,
+        "details": {
+          "home_pitcher_score": 62.8,
+          "away_pitcher_score": 50,
+          "home_lineup_score": 48.5,
+          "away_lineup_score": 48.5,
+          "home_bullpen_score": 72.0,
+          "away_bullpen_score": 72.0,
+          "home_defense_score": 50,
+          "away_defense_score": 50,
+          "home_fatigue_score": 80,
+          "away_fatigue_score": 80,
+          "park_factor": 97,
+          "weather_modifier": 1.0,
+          "weather_effects": [],
+          "umpire": null,
+          "umpire_modifier": 1.0,
+          "home_context_modifier": 1.0,
+          "away_context_modifier": 1.0,
+          "context_flags": [],
+          "lineup_flags_home": [],
+          "lineup_flags_away": [],
+          "bullpen_red_flags": {
+            "home": [],
+            "away": []
+          }
+        }
+      }
+    }
+  ]
+}
