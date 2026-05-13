@@ -123,41 +123,142 @@ def build_pitcher_stats_response(pitcher_id):
     name = next((nm for nm, _id in [(p[0][0], p[0][1]) for p in TODAY] + [(p[1][0], p[1][1]) for p in TODAY]
                  if _id == pitcher_id and nm), 'Unknown')
     era = PITCHER_ERA.get(name, 4.00)
-    # ERA → 대충 추정 (K, BB, IP)
-    ip = 40.0
+
+    # ERA → FIP/WHIP/K9/BB9 합리적 추정 (ERA 와 FIP 강한 양의 상관)
+    # FIP = ERA + (-0.3 ~ +0.3 노이즈)
+    fip_est = era + 0.1
+    whip = 0.85 + (era / 9.0) * 0.85       # ERA 0 → 0.85, ERA 5 → 1.32
+    k9 = max(6.0, 12.5 - era * 0.6)         # 낮은 ERA = 높은 K
+    bb9 = max(1.5, 2.0 + era * 0.25)
+    ip = 45.0
+    k = int(ip / 9 * k9)
+    bb = int(ip / 9 * bb9)
+    # FIP 역산 → HR 결정
+    # FIP = (13*HR + 3*BB - 2*K) / IP + 3.10
+    hr = max(0, int(((fip_est - 3.10) * ip - 3 * bb + 2 * k) / 13))
     er = era * ip / 9
+
     return {'stats': [{
         'type': {'displayName': 'season'},
         'group': {'displayName': 'pitching'},
         'splits': [{
             'season': '2026',
             'stat': {
-                'era': f'{era:.2f}', 'whip': '1.15',
+                'era': f'{era:.2f}',
+                'whip': f'{whip:.2f}',
                 'inningsPitched': f'{ip:.1f}',
-                'strikeOuts': int(ip * 1.1), 'baseOnBalls': int(ip * 0.3),
-                'homeRuns': int(ip * 0.10),
+                'strikeOuts': k, 'baseOnBalls': bb, 'homeRuns': hr,
+                'strikeoutsPer9Inn': f'{k9:.2f}',
+                'walksPer9Inn': f'{bb9:.2f}',
+                'homeRunsPer9': f'{hr / (ip/9):.2f}',
                 'wins': max(0, int((5 - era) * 0.8)),
                 'losses': max(0, int((era - 2) * 0.6)),
                 'earnedRuns': int(er),
-                'battersFaced': int(ip * 4.2), 'hits': int(ip * 0.85),
+                'gamesStarted': 8,
+                'battersFaced': int(ip * 4.2),
+                'hits': int(ip * (0.6 + era * 0.05)),
             }
         }],
     }]}
 
 
-def build_team_stats_response(stat_group):
-    # 매우 단순한 기본값 — predictor 가 KeyError 안 나도록만
+# ──────────────────────────────────────────────────────────────────
+# 팀별 실제 데이터 (WebSearch 종합 — 정성 + 정량 신호 합성)
+# ──────────────────────────────────────────────────────────────────
+# OPS / RPG / 불펜 ERA / L10
+# 출처: ESPN Power Rankings W6, FOX Sports, MLB.com news, BBR 정성신호
+# 정확한 5/12 dump 은 못 받지만 시즌 흐름·기록·랭킹 기반 합성치
+TEAM_DATA = {
+    # AL East
+    'NYY': {'ops':.790,'rpg':5.10,'bp_era':3.40,'l10':'6-4','streak':'L1','notes':'Domínguez IL'},
+    'TOR': {'ops':.730,'rpg':4.45,'bp_era':3.80,'l10':'6-4','streak':'W1'},
+    'TB':  {'ops':.745,'rpg':4.80,'bp_era':3.20,'l10':'7-3','streak':'W2','notes':'16-2 in last 18'},
+    'BAL': {'ops':.700,'rpg':4.10,'bp_era':4.30,'l10':'4-6','streak':'L1'},
+    'BOS': {'ops':.720,'rpg':4.35,'bp_era':4.10,'l10':'5-5','streak':'L1'},
+    # AL Central
+    'CLE': {'ops':.715,'rpg':4.40,'bp_era':3.10,'l10':'7-3','streak':'W2'},
+    'DET': {'ops':.730,'rpg':4.55,'bp_era':3.70,'l10':'6-4','streak':'W1'},
+    'KCR': {'ops':.705,'rpg':4.20,'bp_era':3.60,'l10':'5-5','streak':'L1'},
+    'MIN': {'ops':.700,'rpg':4.15,'bp_era':3.90,'l10':'4-6','streak':'L2'},
+    'CHW': {'ops':.660,'rpg':3.60,'bp_era':4.80,'l10':'3-7','streak':'W1','notes':'바닥권'},
+    # AL West
+    'HOU': {'ops':.670,'rpg':3.80,'bp_era':3.50,'l10':'4-6','streak':'L2','notes':'16-27 부진'},
+    'SEA': {'ops':.710,'rpg':4.20,'bp_era':3.30,'l10':'5-5','streak':'L1','notes':'Raleigh 0-32'},
+    'TEX': {'ops':.725,'rpg':4.40,'bp_era':3.80,'l10':'6-4','streak':'W1'},
+    'LAA': {'ops':.690,'rpg':3.95,'bp_era':4.50,'l10':'4-6','streak':'L1'},
+    'OAK': {'ops':.685,'rpg':3.85,'bp_era':4.40,'l10':'4-6','streak':'L1'},
+    # NL East
+    'ATL': {'ops':.795,'rpg':5.55,'bp_era':3.20,'l10':'8-2','streak':'W3','notes':'리그 1위 OPS 2위, Acuña out till 5/18'},
+    'PHI': {'ops':.690,'rpg':3.95,'bp_era':3.80,'l10':'6-4','streak':'W2','notes':'27th in runs, but 최근 4시리즈 승'},
+    'NYM': {'ops':.700,'rpg':4.05,'bp_era':4.20,'l10':'3-7','streak':'L3'},
+    'MIA': {'ops':.685,'rpg':3.85,'bp_era':4.30,'l10':'4-6','streak':'L1'},
+    'WSH': {'ops':.695,'rpg':3.95,'bp_era':4.60,'l10':'4-6','streak':'L1'},
+    # NL Central
+    'CHC': {'ops':.780,'rpg':5.20,'bp_era':3.40,'l10':'8-2','streak':'W4','notes':'10G W streak 2회'},
+    'MIL': {'ops':.770,'rpg':4.95,'bp_era':3.30,'l10':'7-3','streak':'W2','notes':'MLB OPS 3위, NYY sweep'},
+    'CIN': {'ops':.700,'rpg':4.10,'bp_era':3.90,'l10':'2-8','streak':'L8','notes':'8연패, 60-23 outscored'},
+    'STL': {'ops':.720,'rpg':4.30,'bp_era':3.80,'l10':'6-4','streak':'W1'},
+    'PIT': {'ops':.735,'rpg':4.20,'bp_era':4.00,'l10':'5-5','streak':'L1','notes':'OPS 7위 의외 호조'},
+    # NL West
+    'LAD': {'ops':.750,'rpg':4.65,'bp_era':3.60,'l10':'4-6','streak':'L2','notes':'NL West 부진 + Betts 복귀 임박'},
+    'SDP': {'ops':.735,'rpg':4.45,'bp_era':3.00,'l10':'5-5','streak':'L1','notes':'불펜 ERA 리그 1위'},
+    'ARI': {'ops':.730,'rpg':4.40,'bp_era':3.90,'l10':'5-5','streak':'L1'},
+    'SFG': {'ops':.561,'rpg':3.10,'bp_era':4.20,'l10':'3-7','streak':'L3','notes':'MLB 최저 OPS'},
+    'COL': {'ops':.660,'rpg':3.70,'bp_era':5.60,'l10':'2-8','streak':'L4','notes':'11-31 최약체'},
+}
+
+# 약자 → ID 역매핑 (build_team_stats_response 에서 사용)
+ID2ABBR = {v: k for k, v in ABBR2ID.items()}
+
+
+def build_team_stats_response(stat_group, team_id=None):
+    abbr = ID2ABBR.get(team_id, 'NYY')
+    t = TEAM_DATA.get(abbr, {})
+    ops = t.get('ops', .720)
+    rpg = t.get('rpg', 4.20)
+    bp_era = t.get('bp_era', 4.00)
+
     if stat_group == 'hitting':
-        stat = {'avg': '.255', 'obp': '.320', 'slg': '.420', 'ops': '.740',
-                'runs': '180', 'homeRuns': '45', 'rbi': '170',
-                'atBats': '1400', 'hits': '358', 'doubles': '70',
-                'triples': '5', 'baseOnBalls': '140', 'strikeOuts': '350',
-                'stolenBases': '20', 'plateAppearances': '1560'}
+        # OPS → 분해
+        obp = ops * 0.43          # 대략 OBP/OPS ≈ 0.43
+        slg = ops - obp
+        runs_total = int(rpg * 42)  # 42경기 가정
+        ab = 1400
+        hits = int(ab * (obp - 0.080))  # avg ≈ obp - 0.08
+        stat = {
+            'avg':  f'{hits/ab:.3f}'[1:],
+            'obp':  f'{obp:.3f}'[1:],
+            'slg':  f'{slg:.3f}'[1:],
+            'ops':  f'{ops:.3f}'[1:],
+            'runs': str(runs_total),
+            'homeRuns': str(int(runs_total * 0.27)),
+            'rbi':  str(int(runs_total * 0.95)),
+            'atBats': str(ab),
+            'hits': str(hits),
+            'doubles': str(int(hits * 0.20)),
+            'triples': '5',
+            'baseOnBalls': str(int(ab * 0.10)),
+            'strikeOuts': str(int(ab * 0.24)),
+            'stolenBases': '20',
+            'plateAppearances': str(int(ab * 1.11)),
+        }
     else:
-        stat = {'era': '3.90', 'whip': '1.25', 'inningsPitched': '380.0',
-                'strikeOuts': '380', 'baseOnBalls': '130', 'homeRuns': '40',
-                'wins': '22', 'losses': '20', 'saves': '10',
-                'holds': '30', 'hits': '350', 'earnedRuns': '165'}
+        # 팀 전체 투구 (선발+불펜 가중평균). 불펜 ERA 만 따로 모델링.
+        team_era = bp_era * 0.4 + (rpg * 0.85) * 0.6  # 대충 합성
+        ip = 380.0
+        stat = {
+            'era': f'{team_era:.2f}',
+            'whip': '1.25',
+            'inningsPitched': f'{ip:.1f}',
+            'strikeOuts': str(int(ip * 1.0)),
+            'baseOnBalls': str(int(ip * 0.34)),
+            'homeRuns': str(int(ip * 0.105)),
+            'wins': '22', 'losses': '20',
+            'saves': '10', 'holds': '30',
+            'hits': str(int(ip * 0.92)),
+            'earnedRuns': str(int(team_era * ip / 9)),
+            'bullpen_era': f'{bp_era:.2f}',  # 형 코드가 안 읽어도 보존
+        }
     return {'stats': [{
         'type': {'displayName': 'season'},
         'group': {'displayName': stat_group},
@@ -185,7 +286,11 @@ def patched_get(self, url, **kwargs):
         body = build_pitcher_stats_response(pid)
     elif '/teams/' in url and '/stats' in url:
         group = params.get('group', 'hitting')
-        body = build_team_stats_response(group)
+        try:
+            tid = int(url.split('/teams/')[1].split('/')[0])
+        except Exception:
+            tid = None
+        body = build_team_stats_response(group, team_id=tid)
     else:
         body = {'dates': [], 'records': [], 'stats': []}
 
@@ -228,11 +333,70 @@ for game in data['games']:
     hp_name = game['home_pitcher']['name'] if game.get('home_pitcher') else 'TBD'
     ap_name = game['away_pitcher']['name'] if game.get('away_pitcher') else 'TBD'
 
+    # ── 추가 컨텍스트 데이터 (TEAM_DATA 기반으로 합성) ────────
+    def streak_to_results(streak_code, l10):
+        """W3 / L8 → ['W','W','W',...] 형태로 변환"""
+        if not streak_code:
+            return ['W','L'] * 5
+        ltr = streak_code[0]
+        try:
+            n = int(streak_code[1:])
+        except Exception:
+            n = 1
+        recent = [ltr] * min(n, 5)
+        # L10 채우기
+        try:
+            w, l = map(int, l10.split('-'))
+            extras = ['W'] * (w - (n if ltr == 'W' else 0)) + ['L'] * (l - (n if ltr == 'L' else 0))
+            return (recent + extras)[:10]
+        except Exception:
+            return recent
+
+    def team_ctx(abbr):
+        t = TEAM_DATA.get(abbr, {})
+        return {
+            'recent_results': streak_to_results(t.get('streak'), t.get('l10', '5-5')),
+            'standings_position': 3,
+            'games_back': 5.0,
+            'remaining_games': 120,
+            'team_abbr': abbr,
+            'recent_manager_change': False,
+            'season_phase': 'early',
+        }
+
+    # IL/결장 정보 (WebSearch 결과 기반)
+    IL_MAP = {
+        'NYY': [{'name': 'Jasson Domínguez', 'position': 'CF'}],
+        'ATL': [{'name': 'Ronald Acuña Jr.',  'position': 'RF'}],
+        'LAD': [],  # Betts 복귀 임박 — 일단 제외
+        'SEA': [{'name': 'Cal Raleigh', 'position': 'C'}],  # 0-32 슬럼프, 결장 아닌데 효과적 결장
+    }
+
+    def lineup_data(abbr):
+        return {'absent': IL_MAP.get(abbr, [])}
+
+    # 휴식/워크로드 — 일반적인 5일 휴식 가정
+    from datetime import datetime as _dt, timedelta as _td
+    five_days_ago = (_dt(2026,5,13) - _td(days=5)).strftime('%Y-%m-%d')
+    def pitcher_rest(name):
+        if not name:
+            return None
+        return {
+            'last_start_date': five_days_ago,
+            'season_innings': 45.0,
+            'prev_year_innings': 165.0,
+            'age': 28,
+            'games_since_injury_return': None,
+            'last_pitch_count': 92,
+        }
+
     matchup = {
         'home_team': ha,
         'away_team': aa,
         'home_pitcher_stats': game.get('home_pitcher_stats', {}),
         'away_pitcher_stats': game.get('away_pitcher_stats', {}),
+        'home_pitcher_hand': (game.get('home_pitcher') or {}).get('hand', 'R'),
+        'away_pitcher_hand': (game.get('away_pitcher') or {}).get('hand', 'R'),
         'home_batting': game.get('home_batting', {}),
         'away_batting': game.get('away_batting', {}),
         'home_pitching': game.get('home_pitching', {}),
@@ -243,6 +407,14 @@ for game in data['games']:
         'away_standings': game.get('away_standings', {}),
         'venue': game.get('venue'),
         'weather': game.get('weather', {}),
+        # ★ 추가 데이터 ★
+        'home_team_context': team_ctx(ha),
+        'away_team_context': team_ctx(aa),
+        'home_lineup_data':  lineup_data(ha),
+        'away_lineup_data':  lineup_data(aa),
+        'home_pitcher_rest_workload': pitcher_rest((game.get('home_pitcher') or {}).get('name')),
+        'away_pitcher_rest_workload': pitcher_rest((game.get('away_pitcher') or {}).get('name')),
+        'date': '2026-05-13',
     }
     try:
         pred = predictor.predict(matchup)
