@@ -1,0 +1,99 @@
+{
+  "date": "2026-05-13",
+  "league": "KBO",
+  "generated_at": "2026-05-13T05:21:36.189743",
+  "standings_asof": "2026-05-12",
+  "games": [
+    {
+      "matchup": "삼성 @ LG",
+      "venue": "잠실",
+      "pitchers": "원태인 vs 톨허스트",
+      "home_winrate": 48.4,
+      "score_home": 4.8,
+      "score_away": 5.46,
+      "total": 10.26,
+      "pick": "삼성 승",
+      "pick_strength": "⚪ 관망 (50:50)",
+      "edge": 3.3,
+      "ou_pick": "⚪ 관망 (예상 10.26)",
+      "notes": [
+        "톨허스트(LG): ERA 4.50, 3승1패, 26IP/19K — 평균적",
+        "원태인(삼성): 에이스급, 부상 복귀 후 2번째 등판, 이닝 제한 가능",
+        "구장 팩터: 0.93 (잠실)"
+      ]
+    },
+    {
+      "matchup": "한화 @ 키움",
+      "venue": "고척",
+      "pitchers": "에르난데스 vs 박정훈",
+      "home_winrate": 49.7,
+      "score_home": 5.57,
+      "score_away": 5.8,
+      "total": 11.37,
+      "pick": "한화 승",
+      "pick_strength": "⚪ 관망 (50:50)",
+      "edge": 0.6,
+      "ou_pick": "🔼 오버 (예상 11.37)",
+      "notes": [
+        "박정훈(키움): 키움 약체 마운드, 5선발급 추정",
+        "에르난데스(한화): 투구수·위기관리 불안 지적",
+        "구장 팩터: 0.95 (고척)"
+      ]
+    },
+    {
+      "matchup": "SSG @ KT",
+      "venue": "수원",
+      "pitchers": "타게다 vs 보쉴리",
+      "home_winrate": 62.6,
+      "score_home": 6.0,
+      "score_away": 3.21,
+      "total": 9.21,
+      "pick": "KT 승",
+      "pick_strength": "🟢🟢 강한 픽",
+      "edge": 25.1,
+      "ou_pick": "⚪ 관망 (예상 9.21)",
+      "notes": [
+        "보쉴리(KT): ★ KBO 유일 ERA 0.00 (3경기 17IP 무자책)",
+        "타게다(SSG): SSG 일본인 선발, 기복형",
+        "구장 팩터: 1.05 (수원)"
+      ]
+    },
+    {
+      "matchup": "두산 @ KIA",
+      "venue": "광주",
+      "pitchers": "최준호 vs 양현종",
+      "home_winrate": 55.3,
+      "score_home": 6.44,
+      "score_away": 5.28,
+      "total": 11.72,
+      "pick": "KIA 승",
+      "pick_strength": "🟡 약한 픽",
+      "edge": 10.6,
+      "ou_pick": "🔼 오버 (예상 11.72)",
+      "notes": [
+        "양현종(KIA): KBO 최초 2,200K, 4월 25일 달성",
+        "최준호(두산): 두산 영건, 변동성 큼",
+        "구장 팩터: 1.03 (광주)"
+      ]
+    },
+    {
+      "matchup": "NC @ 롯데",
+      "venue": "사직",
+      "pitchers": "테일러 vs 비슬리",
+      "home_winrate": 52.9,
+      "score_home": 5.48,
+      "score_away": 4.97,
+      "total": 10.45,
+      "pick": "롯데 승",
+      "pick_strength": "⚪ 관망 (50:50)",
+      "edge": 5.9,
+      "ou_pick": "⚪ 관망 (예상 10.45)",
+      "notes": [
+        "비슬리(롯데): 롯데 외국인 선발, 안정적",
+        "테일러(NC): NC 외국인 선발, 평균",
+        "구장 팩터: 1.02 (사직)"
+      ]
+    }
+  ],
+  "source": "WebSearch (KBO 직접 크롤링 불가, 공개 데이터 기반 수기 입력)"
+}
