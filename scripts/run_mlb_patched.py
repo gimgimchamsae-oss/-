@@ -54,16 +54,60 @@ STANDINGS_DATA = {
     'LAD':(24,17),'SDP':(25,17),'ARI':(22,20),'SFG':(23,19),'COL':(11,31),
 }
 
-# 선발투수 ERA (WebSearch 결과)
+# 선발투수 ERA + 최근 폼 (5/13 기준 WebSearch 실제 데이터)
 PITCHER_ERA = {
-    'Max Fried': 2.91, 'Reid Detmers': 4.33, 'Jake Irvin': 5.22,
-    'Nick Lodolo': 6.75, 'Andrew Painter': 3.20, 'Sonny Gray': 3.50,
-    'Shane McClanahan': 2.27, 'Dylan Cease': 3.30, 'Jack Flaherty': 5.73,
-    'Freddy Peralta': 3.10, 'Shota Imanaga': 2.40, 'Seth Lugo': 3.60,
-    'Noah Schultz': 4.50, 'Max Meyer': 3.80,
-    'Simeon Woods Richardson': 4.20, 'Jacob Misiorowski': 2.10,
-    'Ryne Nelson': 4.50, 'Kumar Rocker': 3.90, 'Lance McCullers': 4.10,
-    'Matthew Liberatore': 3.70, 'Shohei Ohtani': 0.97,
+    'Max Fried':              2.91, 'Reid Detmers':       4.33, 'Jake Irvin':       5.22,
+    'Nick Lodolo':            6.75, 'Andrew Painter':     6.89, 'Sonny Gray':       3.54,
+    'Shane McClanahan':       2.27, 'Dylan Cease':        2.58, 'Jack Flaherty':    5.73,
+    'Freddy Peralta':         3.10, 'Shota Imanaga':      2.40, 'Seth Lugo':        3.60,
+    'Noah Schultz':           4.50, 'Max Meyer':          3.80,
+    'Simeon Woods Richardson':4.20, 'Jacob Misiorowski':  2.84,
+    'Ryne Nelson':            4.50, 'Kumar Rocker':       3.90, 'Lance McCullers':  7.41,
+    'Matthew Liberatore':     4.50, 'Shohei Ohtani':      0.60,
+}
+
+# 선발투수 최근 등판 (마지막 1-3 경기 요약)
+PITCHER_RECENT = {
+    'Shohei Ohtani':     [{'ip': 6.0,  'er': 0, 'k': 10, 'bb': 1, 'result': 'W'}],
+    'Jacob Misiorowski': [{'ip': 6.0,  'er': 0, 'k': 11, 'bb': 1, 'result': 'W'}],
+    'Dylan Cease':       [{'ip': 7.0,  'er': 0, 'k': 10, 'bb': 0, 'result': 'W'}],
+    'Shota Imanaga':     [{'ip': 6.0,  'er': 1, 'k': 10, 'bb': 3, 'result': 'W'}],
+    'Sonny Gray':        [{'ip': 6.0,  'er': 2, 'k': 6,  'bb': 2, 'result': 'W'}],
+    'Andrew Painter':    [{'ip': 4.0,  'er': 4, 'k': 4,  'bb': 3, 'result': 'L'}],
+    'Lance McCullers':   [{'ip': 4.0,  'er': 5, 'k': 3,  'bb': 3, 'result': 'L'}],
+    'Nick Lodolo':       [{'ip': 5.1,  'er': 4, 'k': 5,  'bb': 1, 'result': 'L'}],
+    'Jake Irvin':        [{'ip': 5.0,  'er': 3, 'k': 5,  'bb': 2, 'result': 'L'}],
+    'Max Fried':         [{'ip': 7.0,  'er': 1, 'k': 8,  'bb': 1, 'result': 'W'}],
+    'Jack Flaherty':     [{'ip': 5.0,  'er': 4, 'k': 6,  'bb': 2, 'result': 'L'}],
+    'Freddy Peralta':    [{'ip': 6.0,  'er': 2, 'k': 8,  'bb': 2, 'result': 'W'}],
+    'Reid Detmers':      [{'ip': 5.0,  'er': 2, 'k': 6,  'bb': 2, 'result': 'L'}],
+    'Matthew Liberatore':[{'ip': 5.0,  'er': 4, 'k': 4,  'bb': 2, 'result': 'L'}],
+    'Shane McClanahan':  [{'ip': 6.0,  'er': 1, 'k': 8,  'bb': 1, 'result': 'W'}],
+    'Seth Lugo':         [{'ip': 6.0,  'er': 2, 'k': 5,  'bb': 1, 'result': 'W'}],
+    'Noah Schultz':      [{'ip': 4.2,  'er': 3, 'k': 5,  'bb': 3, 'result': 'L'}],
+    'Max Meyer':         [{'ip': 5.0,  'er': 2, 'k': 6,  'bb': 2, 'result': 'L'}],
+    'Simeon Woods Richardson':[{'ip': 5.0, 'er': 3, 'k': 4, 'bb': 1, 'result': 'L'}],
+    'Ryne Nelson':       [{'ip': 5.0,  'er': 3, 'k': 4,  'bb': 1, 'result': 'L'}],
+    'Kumar Rocker':      [{'ip': 5.0,  'er': 2, 'k': 6,  'bb': 2, 'result': 'W'}],
+}
+
+# 구장별 5/13 실제 날씨 (WebSearch)
+VENUE_WEATHER = {
+    'Camden Yards':          {'temp': 68, 'wind_speed': 7,  'wind_dir': 'right_to_left', 'condition': 'Clear'},
+    'Progressive Field':     {'temp': 62, 'wind_speed': 6,  'wind_dir': 'out',           'condition': 'Clear'},
+    'Great American Ball Park':{'temp':77,'wind_speed': 7,  'wind_dir': 'right_to_left', 'condition': 'Clear'},
+    'PNC Park':              {'temp': 69, 'wind_speed': 7,  'wind_dir': 'right_to_left', 'condition': 'Clear'},
+    'Fenway Park':           {'temp': 61, 'wind_speed': 7,  'wind_dir': 'left_to_right', 'condition': 'Clear'},
+    'Rogers Centre':         {'temp': 72, 'wind_speed': 0,  'wind_dir': 'none',          'condition': 'Dome (closed)'},
+    'Citi Field':            {'temp': 61, 'wind_speed': 13, 'wind_dir': 'out_to_center', 'condition': 'Clear, hitter-friendly wind'},
+    'Truist Park':           {'temp': 72, 'wind_speed': 8,  'wind_dir': 'right_to_left', 'condition': 'Clear'},
+    'Rate Field':            {'temp': 65, 'wind_speed': 10, 'wind_dir': 'crosswind',     'condition': 'Clear'},
+    'Target Field':          {'temp': 70, 'wind_speed': 22, 'wind_dir': 'left_to_right', 'condition': 'Strong gusty crosswind'},
+    'American Family Field': {'temp': 67, 'wind_speed': 14, 'wind_dir': 'crosswind',     'condition': 'Dome possible'},
+    'Globe Life Field':      {'temp': 75, 'wind_speed': 5,  'wind_dir': 'none',          'condition': 'Dome'},
+    'Daikin Park':           {'temp': 75, 'wind_speed': 5,  'wind_dir': 'none',          'condition': 'Dome'},
+    'Sutter Health Park':    {'temp': 86, 'wind_speed': 10, 'wind_dir': 'crosswind',     'condition': 'Hot, hitter-friendly'},
+    'Dodger Stadium':        {'temp': 64, 'wind_speed': 8,  'wind_dir': 'out',           'condition': 'Clear, wind blowing out'},
 }
 
 
@@ -80,7 +124,7 @@ def build_schedule_response(date_str):
             'gameDate': f'{date_str}T18:05:00Z',
             'status': {'abstractGameState': 'Preview'},
             'venue': {'id': venue_id, 'name': venue},
-            'weather': {'condition': 'Partly Cloudy', 'temp': 70, 'wind': '8 mph, R to L'},
+            'weather': VENUE_WEATHER.get(venue, {'temp': 70, 'wind_speed': 8, 'wind_dir': 'right_to_left', 'condition': 'Partly Cloudy'}),
             'teams': {
                 'away': {
                     'team': {'id': ABBR2ID[a], 'name': a},
@@ -390,13 +434,20 @@ for game in data['games']:
             'last_pitch_count': 92,
         }
 
+    hp_obj = game.get('home_pitcher') or {}
+    ap_obj = game.get('away_pitcher') or {}
+    hp_recent = PITCHER_RECENT.get(hp_obj.get('name'), [])
+    ap_recent = PITCHER_RECENT.get(ap_obj.get('name'), [])
+
     matchup = {
         'home_team': ha,
         'away_team': aa,
         'home_pitcher_stats': game.get('home_pitcher_stats', {}),
         'away_pitcher_stats': game.get('away_pitcher_stats', {}),
-        'home_pitcher_hand': (game.get('home_pitcher') or {}).get('hand', 'R'),
-        'away_pitcher_hand': (game.get('away_pitcher') or {}).get('hand', 'R'),
+        'home_pitcher_recent': hp_recent,
+        'away_pitcher_recent': ap_recent,
+        'home_pitcher_hand': hp_obj.get('hand', 'R'),
+        'away_pitcher_hand': ap_obj.get('hand', 'R'),
         'home_batting': game.get('home_batting', {}),
         'away_batting': game.get('away_batting', {}),
         'home_pitching': game.get('home_pitching', {}),
@@ -418,14 +469,43 @@ for game in data['games']:
     }
     try:
         pred = predictor.predict(matchup)
-        picks.append({'game': f'{aa} @ {ha}', 'pitchers': f'{ap_name} vs {hp_name}', 'pred': pred})
-        print(f"\n[{aa} @ {ha}] {ap_name} vs {hp_name} @ {game['venue']}")
-        if isinstance(pred, dict):
-            for k, v in pred.items():
-                if k not in ('details', 'breakdown'):
-                    print(f"   {k}: {v}")
+        # ── 픽 분류 ──
+        hwp = pred.get('home_win_prob', 0.5) if isinstance(pred, dict) else 0.5
+        if hwp >= 0.5:
+            winner = ha; edge = (hwp - 0.5) * 200
         else:
-            print(f"   결과: {pred}")
+            winner = aa; edge = (0.5 - hwp) * 200
+        if   edge >= 20: strength = '🟢🟢 강한 픽'
+        elif edge >= 12: strength = '🟢 픽'
+        elif edge >= 6:  strength = '🟡 약한 픽'
+        else:            strength = '⚪ 관망'
+
+        total = pred.get('predicted_total', 0) if isinstance(pred, dict) else 0
+        # MLB 일반 O/U 라인: 보수적 8.5
+        OU_LINE = 8.5
+        if   total >= OU_LINE + 1.0: ou = f'🔼🔼 강한 오버 ({total} vs {OU_LINE})'
+        elif total >= OU_LINE + 0.3: ou = f'🔼 오버 ({total})'
+        elif total <= OU_LINE - 1.0: ou = f'🔽🔽 강한 언더 ({total} vs {OU_LINE})'
+        elif total <= OU_LINE - 0.3: ou = f'🔽 언더 ({total})'
+        else:                         ou = f'⚪ 관망 ({total})'
+
+        conf = pred.get('confidence', 0) if isinstance(pred, dict) else 0
+
+        picks.append({
+            'game': f'{aa} @ {ha}', 'pitchers': f'{ap_name} vs {hp_name}',
+            'venue': game['venue'],
+            'home_win_prob': round(hwp, 3),
+            'away_win_prob': round(1-hwp, 3),
+            'pick': f'{winner} 승', 'strength': strength, 'edge_pct': round(edge, 1),
+            'total': total, 'ou_pick': ou, 'ou_line': OU_LINE,
+            'confidence': round(conf, 3),
+            'predicted_home_runs': pred.get('predicted_home_runs', 0),
+            'predicted_away_runs': pred.get('predicted_away_runs', 0),
+        })
+        print(f"\n[{aa} @ {ha}] {ap_name} vs {hp_name} @ {game['venue']}")
+        print(f"   📊 홈 승률 {hwp:.1%} | 예측 {pred.get('predicted_home_runs')}-{pred.get('predicted_away_runs')} (총 {total}) | 신뢰도 {conf:.1%}")
+        print(f"   🎯 픽: {winner} 승 — {strength} (격차 {edge:.1f}%p)")
+        print(f"   🎯 O/U (라인 {OU_LINE}): {ou}")
     except Exception as e:
         import traceback
         print(f"\n[{aa} @ {ha}] 예측 에러: {type(e).__name__}: {e}")
