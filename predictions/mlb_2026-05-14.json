@@ -1,0 +1,137 @@
+{
+  "date": "2026-05-14",
+  "picks": [
+    {
+      "matchup": "COL @ PIT",
+      "pitchers": "TBD vs Mitch Keller",
+      "venue": "PNC Park",
+      "home_wp": 0.601,
+      "pick": "PIT 승",
+      "strength": "🟢🟢 강한 픽",
+      "edge": 20.2,
+      "total": 7.39,
+      "ou": "🔽🔽 강한 언더 (7.39)",
+      "conf": 0.468
+    },
+    {
+      "matchup": "WSH @ CIN",
+      "pitchers": "MacKenzie Gore vs Chase Burns",
+      "venue": "Great American Ball Park",
+      "home_wp": 0.585,
+      "pick": "CIN 승",
+      "strength": "🟢 픽",
+      "edge": 17.0,
+      "total": 7.62,
+      "ou": "🔽 언더 (7.62)",
+      "conf": 0.62
+    },
+    {
+      "matchup": "DET @ NYM",
+      "pitchers": "Tarik Skubal vs Nolan McLean",
+      "venue": "Citi Field",
+      "home_wp": 0.498,
+      "pick": "DET 승",
+      "strength": "⚪ 관망",
+      "edge": 0.4,
+      "total": 6.6,
+      "ou": "🔽🔽 강한 언더 (6.6)",
+      "conf": 0.5
+    },
+    {
+      "matchup": "MIA @ MIN",
+      "pitchers": "Sandy Alcantara vs Pablo López",
+      "venue": "Target Field",
+      "home_wp": 0.57,
+      "pick": "MIN 승",
+      "strength": "🟢 픽",
+      "edge": 14.0,
+      "total": 7.41,
+      "ou": "🔽🔽 강한 언더 (7.41)",
+      "conf": 0.5
+    },
+    {
+      "matchup": "SDP @ MIL",
+      "pitchers": "Yu Darvish vs Kyle Harrison",
+      "venue": "American Family Field",
+      "home_wp": 0.562,
+      "pick": "MIL 승",
+      "strength": "🟢 픽",
+      "edge": 12.4,
+      "total": 7.7,
+      "ou": "🔽 언더 (7.7)",
+      "conf": 0.55
+    },
+    {
+      "matchup": "SEA @ HOU",
+      "pitchers": "Logan Gilbert vs Hunter Brown",
+      "venue": "Daikin Park",
+      "home_wp": 0.501,
+      "pick": "HOU 승",
+      "strength": "⚪ 관망",
+      "edge": 0.2,
+      "total": 7.01,
+      "ou": "🔽🔽 강한 언더 (7.01)",
+      "conf": 0.5
+    },
+    {
+      "matchup": "STL @ OAK",
+      "pitchers": "Sonny Gray vs TBD",
+      "venue": "Sutter Health Park",
+      "home_wp": 0.446,
+      "pick": "STL 승",
+      "strength": "🟡 약한 픽",
+      "edge": 10.8,
+      "total": 8.21,
+      "ou": "⚪ 관망 (8.21)",
+      "conf": 0.527
+    },
+    {
+      "matchup": "PHI @ BOS",
+      "pitchers": "TBD vs Nathan Eovaldi",
+      "venue": "Fenway Park",
+      "home_wp": 0.599,
+      "pick": "BOS 승",
+      "strength": "🟢 픽",
+      "edge": 19.8,
+      "total": 8.06,
+      "ou": "🔽 언더 (8.06)",
+      "conf": 0.527
+    },
+    {
+      "matchup": "CHC @ ATL",
+      "pitchers": "Justin Steele vs Spencer Strider",
+      "venue": "Truist Park",
+      "home_wp": 0.555,
+      "pick": "ATL 승",
+      "strength": "🟡 약한 픽",
+      "edge": 11.0,
+      "total": 7.77,
+      "ou": "🔽 언더 (7.77)",
+      "conf": 0.5
+    },
+    {
+      "matchup": "KCR @ CHW",
+      "pitchers": "Cole Ragans vs TBD",
+      "venue": "Rate Field",
+      "home_wp": 0.475,
+      "pick": "KCR 승",
+      "strength": "⚪ 관망",
+      "edge": 5.0,
+      "total": 7.9,
+      "ou": "🔽 언더 (7.9)",
+      "conf": 0.468
+    },
+    {
+      "matchup": "SFG @ LAD",
+      "pitchers": "TBD vs Hunter Greene",
+      "venue": "Dodger Stadium",
+      "home_wp": 0.677,
+      "pick": "LAD 승",
+      "strength": "🟢🟢 강한 픽",
+      "edge": 35.4,
+      "total": 7.05,
+      "ou": "🔽🔽 강한 언더 (7.05)",
+      "conf": 0.637
+    }
+  ]
+}
